@@ -1,7 +1,8 @@
 // client/api/notes.ts
 
+import { User } from '@/types/user';
 import { nextServer } from './api';
-import { NewNoteData, Note, User } from "@/types/note";
+import { NewNoteData, Note} from "@/types/note";
 
 interface NotesHttpResponse {
     notes: Note[];

@@ -3,9 +3,10 @@ import { getMe, updateMe } from '@/lib/api/clientApi';
 import css from './EditProfilePage.module.css';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { User } from '@/types/note';
+
 import { useRouter } from 'next/navigation';
 import { ApiError } from '@/app/api/api';
+import { User } from '@/types/user';
 export default function Profile() {
   const [user, setUser] = useState<User | null>(null);
   const [userName, setUserName] = useState('');
