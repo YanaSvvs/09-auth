@@ -7,15 +7,15 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { ApiError } from '@/app/api/api';
 import { User } from '@/types/user';
+import { useAuthStore } from '@/lib/store/authStore';
 export default function Profile() {
   const [user, setUser] = useState<User | null>(null);
-  const [userName, setUserName] = useState('');
   const [error, setError] = useState('');
+  const setUserAuthStore = useAuthStore(state => state.setUser);
   const router = useRouter();
   useEffect(() => {
     getMe().then(user => {
       setUser(user);
-      setUserName(user.username ?? '');
     });
   }, []);
   const handleSubmit = async (formData: FormData) => {
@@ -27,6 +27,7 @@ export default function Profile() {
       console.log(formValues);
       const res = await updateMe(formValues);
       if (res) {
+        setUserAuthStore(res);
         router.push('/profile');
       } else {
         setError('Invalid edit profile');
@@ -66,7 +67,7 @@ export default function Profile() {
               name="username"
               id="username"
               type="text"
-              defaultValue={userName}
+              defaultValue={user?.username ?? ''}
               className={css.input}
               required
             />
