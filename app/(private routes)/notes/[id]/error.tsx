@@ -1,4 +1,3 @@
-// app/notes/error.tsx
 
 'use client';
 import css from './error.module.css';

@@ -1,4 +1,4 @@
-// app/notes/Notes.client.tsx
+
 'use client';
 import { SearchBox } from '@/components/SearchBox/SearchBox';
 import css from './NotesPage.module.css';

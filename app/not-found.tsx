@@ -1,4 +1,3 @@
-// app/not-found.tsx
 
 import type { Metadata } from 'next';
 import NotFoundClient from './not-found.client';

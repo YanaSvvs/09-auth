@@ -1,4 +1,3 @@
-// app/notes/[id]/NoteDetails.client.tsx
 
 'use client';
 import css from './NoteDetails.module.css';

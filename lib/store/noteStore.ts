@@ -1,4 +1,3 @@
-// app/lib/stores/noteStore.ts
 
 import {  NewNoteData } from '@/types/note';
 import { create } from 'zustand';
