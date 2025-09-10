@@ -27,8 +27,8 @@ const NotePreviewClient = () => {
   if (error || !note) return <ErrorMessage />;
 
   const handleClose = () => {
-    router.back();
-  };
+  router.push(`/notes/${id}`);
+};
   return (
     <Modal onClose={handleClose}>
       <div className={css.container}>
